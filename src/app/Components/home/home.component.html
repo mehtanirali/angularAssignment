@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<h1 class="page-title">Product Details</h1>
+<div class="product-list">
+  <div *ngFor="let product of products$ | async; let i = index" class="product-item">
+    <div class="product-image" >
+      <div class="image-border">
+        <img [src]="product.image" alt="{{ product.title }}" />
+        <div class="button-container">
+          <button class="small-button">Add to Cart</button>
+          <button class="small-button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-details" >
+      <h3 class="title">{{ product.title }}</h3>
+      <p class="description">{{ product.description }}</p>
+      <p class="price">{{ product.price | currency: 'USD' }}</p>
+    </div>
+  </div>
+</div>
